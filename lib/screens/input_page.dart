@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'iconContent.dart';
-import 'reusableContainer.dart';
-import 'constants.dart';
-import 'roundedIconButton.dart';
+import 'package:bmi_calculator/compoments/iconContent.dart';
+import 'package:bmi_calculator/compoments/reusableContainer.dart';
+import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/compoments/roundedIconButton.dart';
+import 'package:bmi_calculator/compoments/lowerBar.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -19,6 +20,7 @@ Gender selectedGender;
 int height = 180;
 int weight = 75;
 int age = 25;
+int bmi = 30;
 
 class _InputPageState extends State<InputPage> {
   @override
@@ -230,16 +232,11 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: kPinkColor,
-              width: double.infinity,
-              height: kLowerBarHeight,
-              child: Center(
-                  child: Text(
-                'CALCULATE',
-                style: kBigLabelTextStyle.copyWith(
-                    fontSize: 35, fontWeight: FontWeight.w700),
-              )),
+            LowerBar(
+              title: 'CALCULATE',
+              onTap: () {
+                Navigator.pushNamed(context, '/result');
+              },
             )
           ],
         ));
