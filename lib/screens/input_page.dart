@@ -5,6 +5,8 @@ import 'package:bmi_calculator/compoments/reusableContainer.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/compoments/roundedIconButton.dart';
 import 'package:bmi_calculator/compoments/lowerBar.dart';
+import 'package:bmi_calculator/bmi_logic.dart';
+import 'results_page.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -235,7 +237,15 @@ class _InputPageState extends State<InputPage> {
             LowerBar(
               title: 'CALCULATE',
               onTap: () {
-                Navigator.pushNamed(context, '/result');
+                BMILogic calc = BMILogic(weight: weight, height: height);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultsPage(
+                              bmiResult: calc.calculateBMI(),
+                              bmiGrade: calc.getGrade(),
+                              bmiRecommendation: calc.getRecommendation(),
+                            )));
               },
             )
           ],

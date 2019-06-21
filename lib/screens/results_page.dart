@@ -5,6 +5,15 @@ import 'package:bmi_calculator/screens/input_page.dart';
 import 'package:bmi_calculator/compoments/lowerBar.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.bmiGrade,
+      @required this.bmiRecommendation});
+
+  final String bmiResult;
+  final String bmiGrade;
+  final String bmiRecommendation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,18 +47,18 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    bmiGrade,
                     style: TextStyle(
                         fontSize: 30,
                         color: Colors.green,
                         fontWeight: FontWeight.w800),
                   ),
                   Text(
-                    bmi.toString(),
+                    bmiResult,
                     style: kBigLabelTextStyle.copyWith(fontSize: 100),
                   ),
                   Text(
-                    'Good BMI! Great job but don\'t forget to stay fit.',
+                    bmiRecommendation,
                     style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
