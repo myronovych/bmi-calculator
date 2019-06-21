@@ -234,6 +234,12 @@ class _InputPageState extends State<InputPage> {
               color: kPinkColor,
               width: double.infinity,
               height: kLowerBarHeight,
+              child: Center(
+                  child: Text(
+                'CALCULATE',
+                style: kBigLabelTextStyle.copyWith(
+                    fontSize: 35, fontWeight: FontWeight.w700),
+              )),
             )
           ],
         ));
