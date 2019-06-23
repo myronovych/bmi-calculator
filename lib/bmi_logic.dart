@@ -26,7 +26,7 @@ class BMILogic {
 
   String getRecommendation() {
     if (_bmi > 25)
-      return 'You should do more sport and cut donw on weight.';
+      return 'You should do more sport and cut down on weight.';
     else if (_bmi > 18)
       return 'Good BMI! Great job but don\'t forget to stay fit.';
     else

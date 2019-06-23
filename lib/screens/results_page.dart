@@ -47,7 +47,7 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    bmiGrade,
+                    bmiGrade.toUpperCase(),
                     style: TextStyle(
                         fontSize: 30,
                         color: Colors.green,
